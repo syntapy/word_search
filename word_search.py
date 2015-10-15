@@ -10,13 +10,6 @@ words.close()
 find.close()
 repl.close()
 
-#w = str_to_char(w)
-#f = str_to_char(f)
-
-#print f   # Words searched for
-#print w   # Word search
-#input()
-
 #   i: row index of w
 #   j: collumn index of w
 
@@ -34,7 +27,7 @@ def ch_char(a, b, i, j):
 def search(a, b, i, j, k):
     while in_bounds(a, 0, i, j, 0):
         search_in(a, b, i, j)
-        if j == len(w[i]) - 2: # -2 because of them pesky '\n's at the end. Sheesh!
+        if j == len(w[i]) - 2: # -2 because of '\n's at the end.
             j = 0
             i += 1
         elif j < len(w[i]):
@@ -65,7 +58,6 @@ def search_sp(a, b, i, j):
         k += 1
 
 def write_found(tmp):
-    #print tmp
     for l in range(len(tmp)):
         rt = tmp[l][0]
         it = tmp[l][1]
@@ -112,9 +104,7 @@ def str_to_char(f):
 
 
 r = str_to_char(r)
-#print r
 search(0, 0, 0, 0, 0)
-print r
 
 repl = open('found.txt', 'w')
 for i in range(len(r)):
